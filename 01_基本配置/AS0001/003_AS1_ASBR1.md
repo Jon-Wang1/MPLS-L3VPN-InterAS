@@ -1,5 +1,6 @@
 #### 初始化
 ```text
+#
 hostname AS1_ASBR1
 no ip domain lookup
 interface Loopback0
@@ -16,22 +17,24 @@ interface Ethernet0/1
 line con 0
  exec-timeout 0 0
  logging synchronous
-
+#
 ```
 
 #### 配置IGP（OSPF）
 ```text
+#
 router ospf 1
 network 10.0.1.3 0.0.0.0 area 0
 network 23.0.1.3 0.0.0.0 area 0
-
+#
 ```
 
 #### 配置LDP
 ```text
+#
 mpls ldp router-id Loopback0 force
 router ospf 1
 mpls ldp autoconfig
-
+#
 ```
 
